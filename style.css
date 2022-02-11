@@ -1,0 +1,23 @@
+.container {
+    margin-top: 50px;
+    padding: 10px;
+    border: solid 2px orange;
+}
+
+.terms {
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.pass {
+    background-color: #e0e0e0;
+    padding: 12px;
+}
+
+.border {
+    border: solid 2px orange;
+}
