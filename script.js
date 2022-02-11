@@ -8,7 +8,7 @@ signUpForm.addEventListener('submit', function(e) {
     const formData = new FormData(this);
 
     fetch('https://www.carnmotion.gr/api/sign_up_form', {
-        method: 'post',
+        method: 'POST',
         body: formData
     }).then(function (response){
         return response.text();
@@ -17,4 +17,4 @@ signUpForm.addEventListener('submit', function(e) {
     }).catch(function(error){
         console.error(error);
     })
-}) 
+})
