@@ -1,11 +1,16 @@
 .container {
     margin-top: 50px;
     padding: 10px;
-    border: solid 2px orange;
+    border: solid 2px #f0552a;
 }
 
 .terms {
     text-decoration: none;
+    color: #f05023;
+}
+
+.terms:hover {
+    color: #28a745;
 }
 
 .btn {
@@ -16,8 +21,18 @@
 .pass {
     background-color: #e0e0e0;
     padding: 12px;
+    margin: 1px;
 }
 
-.border {
-    border: solid 2px orange;
+.header {
+    font-size: 22px;
+    padding: 4px;
+}
+
+ul {
+    list-style-image: url('https://www.carnmotion.gr/css/images/ul.png');
+}
+
+.header-two {
+    margin-bottom: 8px;
 }

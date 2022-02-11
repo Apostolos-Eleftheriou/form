@@ -10,7 +10,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container col-md-8">
+    <div class="container">
+      <div class="header">Εγγραφή</div>
+      <hr>
+      <div class="header-two"> 
+        <h4><b>Γίνετε μέλος ώστε να επωφεληθείτε</b></h4>
+        <ul>
+          <li><i>Κερδίστε εκπτώσεις και λάβετε αποκλειστικές προσφορές για μέλη της Car n' Motion</i></li>
+          <li><i>Γρήγορη και εύκολη ολοκλήρωση κρατήσεων</i></li>
+          <li><i>Εύκολη πρόσβαση στο ιστορικό των κρατήσεων σας</i></li>
+        </ul>
+        <span style="font-size:10px;line-height:10px;"> * Θα χρησιμοποιήσουμε τα προσωπικά σας στοιχεία μόνο για την ορθή διεκπεραίωση της κράτησης σας και για το newsletter του carnmotion.gr</span>
+      </div>
     <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-12">
             <label for="validation-afm" class="form-label">ΑΦΜ<span class="req">*</span></label>
@@ -59,13 +70,21 @@
           </div>
         </div>
         <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Πόλη - Περιοχή</label>
-          <input type="text" class="form-control" id="validationCustom03" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
+          <label for="sign-up-bday" class="form-label">Ημ/νία Γέννησης</label>
+          <div class="date-of-birth">
+            <input name="sign-up-bday" type="date" id="sign-up-bday" class="form-control">
+            <input name="sign-up-bday-one" type="hidden" id="sign-up-bday-one">
+            <input name="sign-up-bday-two" type="hidden" id="sign-up-bday-two">
+        </div>
         </div>
         <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Κινητό Τηλέφωνο</label>
+          <input type="text" class="form-control" id="validationCustom02" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-3">
           <label for="validationCustom04" class="form-label">Χώρα</label>
           <select class="form-select" id="validationCustom04" required>
             <option selected disabled value="">Choose...</option>
@@ -288,11 +307,33 @@
           </div>
         </div>
         <div class="col-md-3">
+          <label for="validationCustom03" class="form-label">Πόλη - Περιοχή</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-2">
           <label for="validationCustom05" class="form-label">ΤΚ</label>
           <input type="text" class="form-control" id="validationCustom05" required>
           <div class="invalid-feedback">
             Please provide a valid zip.
           </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <label for="validationCustom05" class="form-label">Αριθμός Διπλώματος</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="drlicense" class="form-label">Ημ/νία Έκδοσης Διπλώματος</label>
+          <div class="date-of-drlicense">
+            <input name="drlicense" type="date" id="drlicense" class="form-control">
+            <input name="drlicense-one" type="hidden" id="drlicense-one">
+            <input name="drlicense-two" type="hidden" id="drlicense-two">
+        </div>
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Φωτογραφία διπλώματος</label>
