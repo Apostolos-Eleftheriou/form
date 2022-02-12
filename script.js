@@ -75,6 +75,9 @@ $(document).ready(function() {
     foto : {
     required: true
     },
+    drlicense : {
+    required: true
+    },
     },
     messages : {
             firstname : "Παρακαλώ εισάγετε όνομα.",
@@ -111,6 +114,7 @@ $(document).ready(function() {
             foto : {
             required: "Παρακαλώ προσθέστε φωτογραφία διπλώματος."
             },
+            drlicense : "Το δίπλωμα πρέπει να έχει εκδοθεί τουλάχιστον πριν 1 έτος και να λήγει το λιγότερο σε 1 έτος από τώρα.",
             }
     });
     });
