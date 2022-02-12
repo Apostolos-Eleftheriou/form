@@ -19,6 +19,51 @@
 //     })
 // })
 
+$(document).ready(function(){
+    $("#sign-up-form").submit(function(event){
+
+        event.preventDefault();
+
+        let afm = $('#afm').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let firstName = $('#firstname').val();
+        let lastName = $('#lastname').val();
+        let bDay = $('#sign-up-bday').val();
+        let cellPhone = $('#cellPhone').val();
+        let country = $('#country').val();
+        let city = $('#city').val();
+        let tk = $('#tk').val();
+        let drLicenseNumber = $('#drLicenseNumber').val();
+        let drLicenseDate = $('#drLicenseDate').val();
+        let formFile = $('#formFile').val();        
+        
+        $.post("https://www.carnmotion.gr/api/afm_check",{
+            afm: afm
+        })
+
+        $.post("https://www.carnmotion.gr/api/email_check",{
+            email: email
+        })
+
+        $.post( "https://www.carnmotion.gr/api/sign_up_form", 
+        { 
+            afm: afm,
+            name: firstName,
+            lastname: lastName, 
+            email: email,
+            password: password,
+            birthday: bDay,
+            cellphone: cellPhone,
+            country: country,
+            city: city,
+            tk: tk,
+            driverLicenseNumber: drLicenseNumber,
+            driverLicenseDate: drLicenseDate,
+            formFile: formFile
+        } );
+    });
+})
 
 
 $(document).ready(function() {

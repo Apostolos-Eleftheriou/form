@@ -14,7 +14,7 @@
     <script src="script.js" defer></script> 
 </head>
 <body>
-    <div class="container col-md-6">
+    <div class="container col-md-6 p-3 my-3">
       <div class="header">Εγγραφή</div>
       <hr>
       <div class="header-two"> 
@@ -26,52 +26,35 @@
         </ul>
         <span style="font-size:10px;line-height:10px;"> * Θα χρησιμοποιήσουμε τα προσωπικά σας στοιχεία μόνο για την ορθή διεκπεραίωση της κράτησης σας και για το newsletter του carnmotion.gr</span>
       </div>
-    <form action="" class="row g-3 needs-validation" id="sign-up-form" novalidate>
+    <form method="POST" action="" class="row g-3 needs-validation" id="sign-up-form" novalidate>
         <div class="col-md-12">
             <label for="afm" class="form-label">ΑΦΜ<span class="req">*</span></label>
           <input type="text" class="form-control" name="afm" id="afm" value="" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+          
         </div>
         <div class="col-md-12">
             <label for="email" class="form-label">Email<span class="req">*</span></label>
           <input type="email" class="form-control" name="email" id="email" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
+         </div>
         <div class="col-md-12">
           <div class="row pass">
             <div class="col-md-6">
                 <label for="password" class="form-label">Κωδικός<span class="req">*</span></label>
                 <input type="password" class="form-control" name="password" id="password" value="" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
+            </div>
               <div class="col-md-6">
                 <label for="confirm_password" class="form-label">Επαλήθευση Κωδικού<span class="req">*</span></label>
                 <input type="password" class="form-control" name="confirmpass" id="confirm_password" value="" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
               </div>
           </div>
         </div>
         <div class="col-md-6">
           <label for="firstname" class="form-label">Όνομα<span class="req">*</span></label>
           <input type="text" class="form-control" name="firstname" id="firstname" value="" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
         </div>
         <div class="col-md-6">
           <label for="lastname" class="form-label">Επώνυμο<span class="req">*</span></label>
           <input type="text" class="form-control" name="lastname" id="lastname" value="" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
         </div>
         <div class="col-md-6">
           <label for="sign-up-bday" class="form-label">Ημ/νία Γέννησης</label>
@@ -84,9 +67,6 @@
         <div class="col-md-6">
           <label for="cellPhone" class="form-label">Κινητό Τηλέφωνο</label>
           <input type="text" class="form-control" name="number" id="cellPhone" value="" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
         </div>
         <div class="col-md-4">
           <label for="country" class="form-label">Χώρα</label>
@@ -306,30 +286,18 @@
             <option value="+260">Zambia</option>
             <option value="+263">Zimbabwe</option>
           </select>
-          <div class="invalid-feedback">
-            Please select a valid state.
-          </div>
         </div>
         <div class="col-md-4">
           <label for="city" class="form-label">Πόλη - Περιοχή</label>
           <input type="text" name="city" class="form-control" id="city" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
         </div>
         <div class="col-md-4">
           <label for="tk" class="form-label">ΤΚ</label>
           <input type="text" name="tk" class="form-control" id="tk" required>
-          <div class="invalid-feedback">
-            Please provide a valid zip.
-          </div>
         </div>
         <div class="col-md-6 col-xl-6">
           <label for="drLicenseNumber" class="form-label">Αριθμός Διπλώματος</label>
           <input type="text" name="licnum" class="form-control" id="drLicenseNumber" required>
-          <div class="invalid-feedback">
-            Please provide a valid zip.
-          </div>
         </div>
         <div class="col-md-6 col-xl-6">
           <label for="drLicenseDate" class="form-label">Ημ/νία Έκδοσης Διπλώματος</label>
@@ -349,9 +317,6 @@
             <label class="form-check-label" for="agree">
               <a class="terms" href="https://www.carnmotion.gr/en/v2info/car-rental-terms"> Agree to terms and conditions</a>
             </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
           </div>
         </div>
         <div class="col-12">
