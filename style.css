@@ -43,3 +43,8 @@ ul {
 .error {
     color: red;
 }
+
+.success {
+    font-size: 19px;
+    padding-top: 10px;
+}

@@ -1,3 +1,27 @@
+document.getElementById('formFile').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+  
+    if (!file) {
+      return;
+    }
+  
+    new Compressor(file, {
+      quality: 0.6,
+  
+      success(result) {
+        const formData = new FormData();
+  
+        formData.append('file', result, result.name);
+        console.log('Upload success');
+      },
+      error(err) {
+        console.log(err.message);
+      },
+    });
+  });
+
+
+
 $(document).ready(function(){
     $("#sign-up-form").submit(function(event){
 
@@ -21,12 +45,18 @@ $(document).ready(function(){
         let emailResponse ;
         let formResponse ;
 
-        $.post('https://www.carnmotion.gr/api/afm_check', {afm: afm}, function (data) {
-            afmResponse = data.exists;
+        $.post('https://www.carnmotion.gr/api/afm_check', 
+        {
+            afm: afm
+        },  function (data) {
+                afmResponse = data.exists;
             }, 'json');
 
-        $.post("https://www.carnmotion.gr/api/email_check", {email: email}, function (data) {
-            emailResponse = data.exists;
+        $.post("https://www.carnmotion.gr/api/email_check", 
+        {
+            email: email
+        },  function (data) {
+                emailResponse = data.exists;
             }, 'json');
 
         if(!(afmResponse && emailResponse)) {
