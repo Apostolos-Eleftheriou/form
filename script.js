@@ -17,16 +17,20 @@ $(document).ready(function(){
         let drLicenseDate = btoa($('#drLicenseDate').val());
         let formFile = btoa($('#formFile').val());        
         
+        let afmResponse ;
+        let emailResponse ;
+        let formResponse ;
 
-        $.post("https://www.carnmotion.gr/api/afm_check",{
-            afm: afm
-        })
+        $.post('https://www.carnmotion.gr/api/afm_check', {afm: afm}, function (data) {
+            afmResponse = data.exists;
+            }, 'json');
 
-        $.post("https://www.carnmotion.gr/api/email_check",{
-            email: email
-        })
+        $.post("https://www.carnmotion.gr/api/email_check", {email: email}, function (data) {
+            emailResponse = data.exists;
+            }, 'json');
 
-        $.post( "https://www.carnmotion.gr/api/sign_up_form", 
+        if(!(afmResponse && emailResponse)) {
+            $.post( "https://www.carnmotion.gr/api/sign_up_form", 
         { 
             afm: afm,
             name: firstName,
@@ -41,7 +45,15 @@ $(document).ready(function(){
             driverLicenseNumber: drLicenseNumber,
             driverLicenseDate: drLicenseDate,
             formFile: formFile
+        }, function(data) {
+            formResponse = data.sucess;
+            if(formResponse) {
+                let p = document.querySelector(".success");
+                p.innerText = "Η εγγραφή έγινε με επιτυχία.";
+            }
         } );
+        
+      }
 
     });
 
