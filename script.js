@@ -1,43 +1,23 @@
-// const signUpForm = document.getElementById('sign-up-form');
-
-
-
-// signUpForm.addEventListener('submit', function(e) {
-//     e.preventDefault();
-
-//     const formData = new FormData(this);
-
-//     fetch('https://www.carnmotion.gr/api/sign_up_form', {
-//         method: 'POST',
-//         body: formData
-//     }).then(function (response){
-//         return response.text();
-//     }).then(function (text){
-//         console.log(text);
-//     }).catch(function(error){
-//         console.error(error);
-//     })
-// })
-
 $(document).ready(function(){
     $("#sign-up-form").submit(function(event){
 
         event.preventDefault();
 
-        let afm = $('#afm').val();
-        let email = $('#email').val();
-        let password = $('#password').val();
-        let firstName = $('#firstname').val();
-        let lastName = $('#lastname').val();
-        let bDay = $('#sign-up-bday').val();
-        let cellPhone = $('#cellPhone').val();
-        let country = $('#country').val();
-        let city = $('#city').val();
-        let tk = $('#tk').val();
-        let drLicenseNumber = $('#drLicenseNumber').val();
-        let drLicenseDate = $('#drLicenseDate').val();
-        let formFile = $('#formFile').val();        
+        let afm = btoa($('#afm').val());
+        let email = btoa($('#email').val());
+        let password = btoa($('#password').val());
+        let firstName = btoa($('#firstname').val());
+        let lastName = btoa($('#lastname').val());
+        let bDay = btoa($('#sign-up-bday').val());
+        let cellPhone = btoa($('#cellPhone').val());
+        let country = btoa($('#country').val());
+        let city = btoa($('#city').val());
+        let tk = btoa($('#tk').val());
+        let drLicenseNumber = btoa($('#drLicenseNumber').val());
+        let drLicenseDate = btoa($('#drLicenseDate').val());
+        let formFile = btoa($('#formFile').val());        
         
+
         $.post("https://www.carnmotion.gr/api/afm_check",{
             afm: afm
         })
@@ -62,7 +42,9 @@ $(document).ready(function(){
             driverLicenseDate: drLicenseDate,
             formFile: formFile
         } );
+
     });
+
 })
 
 
