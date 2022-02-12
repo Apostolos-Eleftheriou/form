@@ -76,7 +76,7 @@
         <div class="col-md-6">
           <label for="sign-up-bday" class="form-label">Ημ/νία Γέννησης</label>
           <div class="date-of-birth">
-            <input name="sign-up-bday" type="date" name="age" id="sign-up-bday" class="form-control">
+            <input type="date" name="age" id="sign-up-bday" class="form-control">
             <input name="sign-up-bday-one" type="hidden" id="sign-up-bday-one">
             <input name="sign-up-bday-two" type="hidden" id="sign-up-bday-two">
         </div>
@@ -90,7 +90,7 @@
         </div>
         <div class="col-md-4">
           <label for="country" class="form-label">Χώρα</label>
-          <select class="form-select" id="country" required>
+          <select class="form-select" name="country" id="country" required>
             <option selected disabled value="">Διαλέξτε</option>
             <!-- <option> </option> -->
             <option value="+30">Ελλάδα</option>
@@ -312,21 +312,21 @@
         </div>
         <div class="col-md-4">
           <label for="city" class="form-label">Πόλη - Περιοχή</label>
-          <input type="text" class="form-control" id="city" required>
+          <input type="text" name="city" class="form-control" id="city" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-4">
           <label for="tk" class="form-label">ΤΚ</label>
-          <input type="text" class="form-control" id="tk" required>
+          <input type="text" name="tk" class="form-control" id="tk" required>
           <div class="invalid-feedback">
             Please provide a valid zip.
           </div>
         </div>
         <div class="col-md-6 col-xl-6">
           <label for="drLicenseNumber" class="form-label">Αριθμός Διπλώματος</label>
-          <input type="text" class="form-control" id="drLicenseNumber" required>
+          <input type="text" name="licnum" class="form-control" id="drLicenseNumber" required>
           <div class="invalid-feedback">
             Please provide a valid zip.
           </div>
@@ -341,7 +341,7 @@
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Φωτογραφία διπλώματος</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" name="foto" type="file" id="formFile">
           </div>
         <div class="col-12">
           <div class="form-check">

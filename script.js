@@ -41,11 +41,13 @@ $(document).ready(function() {
     required: true,
     equalTo : "#password"
     },
-    age: {
+    age : {
     required: true,
-    number: true,
     min: 23,
     max: 75
+    },
+    country : {
+    required: true
     },
     email: {
     required: true,
@@ -58,23 +60,37 @@ $(document).ready(function() {
     required: true,
     minlength: 9
     },
-    number:{
+    number : {
     required: true,
     minlength: 10
+    },
+    city : {
+    required: true
+    },
+    tk : {
+    required: true,
+    maxlength: 10
+    },
+    licnum : {
+    required: true
+    },
+    foto : {
+    required: true
     },
     },
     messages : {
             firstname : "Παρακαλώ εισάγετε όνομα.",
             lastname : "Παρακαλώ εισάγετε επίθετο.",
-            afm :{
+            afm : {
             required : "Παρακαλώ συμπληρώστε το ΑΦΜ σας.",
-            minlength : "Το ΑΦΜ σας πρεπει να είναι αποτελείται απο 9 αριθμούς."
+            minlength : "Το ΑΦΜ σας πρεπει να αποτελείται απο 9 αριθμούς."
             },
             password : {
             required : "Παρακαλώ εισάγετε έναν κωδικό πρόσβασης",
             minlength : "Ο κωδικός πρόσβασης πρέπει να είναι τουλάχιστον 6 χαρακτήρες"
             },
             confirmpass : {
+            required : "Παρακαλώ εισάγετε έναν κωδικό πρόσβασης",
             equalTo : "Ο κωδικός δεν είναι ίδιος."
             },
             number : {
@@ -82,58 +98,22 @@ $(document).ready(function() {
             minlength : "Το κινητό έχει 10 αριθμούς."
             },
             email : {
-            email : "Παρακαλώ εισάγετε σωστό email."
+            email : "Παρακαλώ εισάγετε σωστό email.",
+            required: "Παρακαλώ εισάγετε email."
             },
-            agree : "Παρακαλώ αποδεχτήτε τους όρους και προυποθέσεις."
+            agree : "Παρακαλώ αποδεχτήτε τους όρους και προϋποθέσεις.",
+            age : "Παρακαλώ εισάγετε Ημ/νία Γέννησης.",
+            country : "Παρακαλώ εισάγετε Χώρα.",
+            city : "Παρακαλώ εισάγετε Πόλη.",
+            tk : {
+            required: "Παρακαλώ εισάγεται ΤΚ.",
+            maxlength : "Ο ΤΚ είναι μέχρι 10 αριθμούς."
+            },
+            licnum: "Παρακαλώ εισάγεται αριθμό διπλώματος.",
+            foto : {
+                required: "Παρακαλώ προσθέστε φωτογραφία διπλώματος."
+                },
             }
     });
     });
 
-// $().ready(function(){
- 
-//     $("#sign-up-form").validate({
-//       // in 'rules' user have to specify all the constraints for respective fields
-//     rules : {
-//     firstname : "required",
-//     lastname : "required",
-//     afm : "required",
-//     username : {
-//     required : true,
-//     minlength : 2  //for length of lastname
-//     },
-//     password : {
-//     required : true,
-//     minlength : 5
-//     },
-//     confirm_password : {
-//     required : true,
-//     minlength : 5,
-//     equalTo : "#password" //for checking both passwords are same or not
-//     },
-//     email : {
-//     required : true,
-//     email : true
-//     },
-//     agree : "required"
-//     },
-//         // in 'messages' user have to specify message as per rules
-//     messages : {
-//     firstname : "Please enter your firstname",
-//     lastname : "Please enter your lastname",
-//     afm :{
-//     required : "Please enter a afm",
-//     minlength : "Your username must consist of at least 2 characters"
-//     },
-//     password : {
-//     required : "Please enter a password",
-//     minlength : "Your password must be consist of at least 5 characters"
-//     },
-//     confirm_password : {
-//     required : "Please enter a password",
-//     minlength : "Your password must be consist of at least 5 characters",
-//     equalTo : "Please enter the same password as above"
-//     },
-//     agree : "Please accept our policy"
-//     }
-//     });
-//     });

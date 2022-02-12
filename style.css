@@ -36,3 +36,7 @@ ul {
 .header-two {
     margin-bottom: 8px;
 }
+
+.error {
+    color: red;
+}
