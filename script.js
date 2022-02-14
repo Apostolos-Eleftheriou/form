@@ -50,43 +50,46 @@ $(document).ready(function(){
             afm: afm
         },  function (data) {
                 afmResponse = data.exists;
-            }, 'json');
 
         $.post("https://www.carnmotion.gr/api/email_check", 
         {
             email: email
         },  function (data) {
                 emailResponse = data.exists;
+                if((afmResponse == null) || (emailResponse == null)) {
+                  return;
+              
+              } else if (!(afmResponse && emailResponse)) {
+                $.post( "https://www.carnmotion.gr/api/sign_up_form", 
+                { 
+                    afm: afm,
+                    name: firstName,
+                    lastname: lastName, 
+                    email: email,
+                    password: password,
+                    birthday: bDay,
+                    cellphone: cellPhone,
+                    country: country,
+                    city: city,
+                    tk: tk,
+                    driverLicenseNumber: drLicenseNumber,
+                    driverLicenseDate: drLicenseDate,
+                    formFile: formFile
+                }, function(data) {
+                    formResponse = data.sucess;
+                    if(formResponse) {
+                        let p = document.querySelector(".success");
+                        p.innerText = "Η εγγραφή έγινε με επιτυχία.";
+                    }
+                } );
+              }
             }, 'json');
+            
+          }, 'json');
 
-        if(!(afmResponse && emailResponse)) {
-            $.post( "https://www.carnmotion.gr/api/sign_up_form", 
-        { 
-            afm: afm,
-            name: firstName,
-            lastname: lastName, 
-            email: email,
-            password: password,
-            birthday: bDay,
-            cellphone: cellPhone,
-            country: country,
-            city: city,
-            tk: tk,
-            driverLicenseNumber: drLicenseNumber,
-            driverLicenseDate: drLicenseDate,
-            formFile: formFile
-        }, function(data) {
-            formResponse = data.sucess;
-            if(formResponse) {
-                let p = document.querySelector(".success");
-                p.innerText = "Η εγγραφή έγινε με επιτυχία.";
-            }
-        } );
-        
-      }
 
     });
-
+    
 })
 
 
